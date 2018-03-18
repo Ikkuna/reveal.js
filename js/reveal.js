@@ -7,6 +7,7 @@
  */
 import head from 'headjs';
 var ex = function( root, factory ) {
+	if (root === undefined) root = window;
 	if( typeof define === 'function' && define.amd ) {
 		// AMD. Register as an anonymous module.
 		define( function() {
