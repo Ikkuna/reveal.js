@@ -23,16 +23,16 @@ module.exports = function(grunt) {
 			files: [ 'test/*.html' ]
 		},
 
-		uglify: {
-			options: {
-				banner: '<%= meta.banner %>\n',
-				screwIE8: false
-			},
-			build: {
-				src: 'js/reveal.js',
-				dest: 'js/reveal.min.js'
-			}
-		},
+		// uglify: {
+		// 	options: {
+		// 		banner: '<%= meta.banner %>\n',
+		// 		screwIE8: false
+		// 	},
+		// 	build: {
+		// 		src: 'js/reveal.js',
+		// 		dest: 'js/reveal.min.js'
+		// 	}
+		// },
 
 		sass: {
 			core: {
@@ -158,7 +158,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks( 'grunt-contrib-cssmin' );
 	grunt.loadNpmTasks( 'grunt-contrib-jshint' );
 	grunt.loadNpmTasks( 'grunt-contrib-qunit' );
-	grunt.loadNpmTasks( 'grunt-contrib-uglify' );
+	// grunt.loadNpmTasks( 'grunt-contrib-uglify' );
 	grunt.loadNpmTasks( 'grunt-contrib-watch' );
 	grunt.loadNpmTasks( 'grunt-autoprefixer' );
 	grunt.loadNpmTasks( 'grunt-retire' );
@@ -169,7 +169,7 @@ module.exports = function(grunt) {
 	grunt.registerTask( 'default', [ 'css', 'js' ] );
 
 	// JS task
-	grunt.registerTask( 'js', [ 'jshint', 'uglify', 'qunit' ] );
+	grunt.registerTask( 'js', [ 'jshint', /*'uglify',*/ 'qunit' ] );
 
 	// Theme CSS
 	grunt.registerTask( 'css-themes', [ 'sass:themes' ] );
