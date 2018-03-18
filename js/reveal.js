@@ -6,7 +6,7 @@
  * Copyright (C) 2017 Hakim El Hattab, http://hakim.se
  */
 import head from 'headjs';
-module.exports = function() {
+export default function() {
 
 	'use strict';
 
