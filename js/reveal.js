@@ -6,7 +6,7 @@
  * Copyright (C) 2017 Hakim El Hattab, http://hakim.se
  */
 import head from 'headjs';
-function( root, factory ) {
+var ex = ( root, factory ) => {
 	if (root === undefined) root = window;
 	if( typeof define === 'function' && define.amd ) {
 		// AMD. Register as an anonymous module.
@@ -24,7 +24,8 @@ function( root, factory ) {
 		console.log('Globals for reve');
 		root.Reveal = factory();
 	}
-}( this, function() {
+}
+ex( this, function() {
 
 	'use strict';
 
