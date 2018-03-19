@@ -155,4 +155,4 @@ var RevealNotes = function() {
 
 };
 
-export default RevealNotes;
+//export default RevealNotes;
