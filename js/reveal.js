@@ -11,14 +11,17 @@ var ex = function( root, factory ) {
 	if( typeof define === 'function' && define.amd ) {
 		// AMD. Register as an anonymous module.
 		define( function() {
+			console.log('AMD for reve');
 			root.Reveal = factory();
 			return root.Reveal;
 		} );
 	} else if( typeof exports === 'object' ) {
+		console.log('Node for reve');
 		// Node. Does not work with strict CommonJS.
-		module.exports = factory();
+		export default factory();
 	} else {
 		// Browser globals.
+		console.log('Globals for reve');
 		root.Reveal = factory();
 	}
 }( this, function() {
