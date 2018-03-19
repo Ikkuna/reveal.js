@@ -147,7 +147,7 @@ var RevealNotes = function() {
 		}, false );
 
 		// Show our keyboard shortcut in the reveal.js help overlay
-		if( window.Reveal ) Reveal.registerKeyboardShortcut( 'S', 'Speaker notes view' );
+		//if( window.Reveal ) Reveal.registerKeyboardShortcut( 'S', 'Speaker notes view' );
 
 	}
 
