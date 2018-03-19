@@ -32,7 +32,7 @@ const plugin = function () {
 	'use strict';
 
 	var Reveal;
-	var Reveal.head = {};
+	Reveal.head = {};
 
 	// The reveal.js version
 	var VERSION = '3.6.0';
