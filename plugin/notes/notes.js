@@ -9,8 +9,8 @@
  * 3. This window proceeds to send the current presentation state
  *    to the notes window
  */
-import { default as Reveal } from 'reve'
-var RevealNotes = (function() {
+//import { default as Reveal } from 'reve'
+var RevealNotes = function() {
 
 	function openNotes( notesFilePath ) {
 
@@ -153,4 +153,4 @@ var RevealNotes = (function() {
 
 	return { open: openNotes };
 
-})();
+};
