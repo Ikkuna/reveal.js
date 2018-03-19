@@ -31,7 +31,7 @@ const plugin = function () {
 
 	'use strict';
 
-	var Reveal;
+	var Reveal = {};
 	Reveal.head = {};
 
 	// The reveal.js version
