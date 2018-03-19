@@ -154,3 +154,5 @@ var RevealNotes = function() {
 	return { open: openNotes };
 
 };
+
+export default RevealNotes;
