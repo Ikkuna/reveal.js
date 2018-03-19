@@ -305,7 +305,7 @@ const plugin = function () {
 	 * Starts up the presentation if the client is capable.
 	 */
 	function initialize( domObject, options ) {
-		extend(Reveal, domObject);
+		extend(Reveal.plugins, domObject);
 		// Make sure we only initialize once
 		if( initialized === true ) return;
 
