@@ -6,7 +6,7 @@
  * Copyright (C) 2017 Hakim El Hattab, http://hakim.se
  */
 import head from 'headjs';
-var ex = function( root, factory ) {
+export default function( root, factory ) {
 	if (root === undefined) root = window;
 	if( typeof define === 'function' && define.amd ) {
 		// AMD. Register as an anonymous module.
@@ -18,7 +18,7 @@ var ex = function( root, factory ) {
 	} else if( typeof exports === 'object' ) {
 		console.log('Node for reve');
 		// Node. Does not work with strict CommonJS.
-		export default factory();
+		return factory();
 	} else {
 		// Browser globals.
 		console.log('Globals for reve');
@@ -5244,6 +5244,3 @@ var ex = function( root, factory ) {
 	return Reveal;
 
 });
-
-
-export default ex;
