@@ -6,7 +6,29 @@
  * Copyright (C) 2017 Hakim El Hattab, http://hakim.se
  */
 import head from 'headjs';
-window.Reveal = function() {
+export default ex(root, plugin)
+function ex ( root, factory ) {
+	if (root === undefined) root = window;
+	if( typeof define === 'function' && define.amd ) {
+		// AMD. Register as an anonymous module.
+		define( function() {
+			console.log('AMD for reve');
+			root.Reveal = factory();
+			return root.Reveal;
+		} );
+	} else if( typeof exports === 'object' ) {
+		console.log('Node for reve');
+		// Node. Does not work with strict CommonJS.
+		return factory();
+	} else {
+		// Browser globals.
+		console.log('Globals for reve');
+		root.Reveal = factory();
+		return factory();
+	}
+}
+
+const plugin = function () {
 
 	'use strict';
 
