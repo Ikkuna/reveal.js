@@ -5,7 +5,7 @@
  *
  * Copyright (C) 2017 Hakim El Hattab, http://hakim.se
  */
-import head from 'headjs';
+//import head from 'headjs';
 function ex ( root, factory ) {
 	if (root === undefined) root = window;
 	if( typeof define === 'function' && define.amd ) {
@@ -41,7 +41,7 @@ const plugin = function () {
 		VERTICAL_SLIDES_SELECTOR = '.slides>section.present>section',
 		HOME_SLIDE_SELECTOR = '.slides>section:first-of-type',
 		UA = navigator.userAgent,
-
+		head,
 		// Configuration defaults, can be overridden at initialization time
 		config = {
 
@@ -304,8 +304,8 @@ const plugin = function () {
 	/**
 	 * Starts up the presentation if the client is capable.
 	 */
-	function initialize( options ) {
-
+	function initialize( domObject, options ) {
+		extend(Reveal, domObject);
 		// Make sure we only initialize once
 		if( initialized === true ) return;
 
@@ -418,14 +418,14 @@ const plugin = function () {
 		function proceed() {
 			if( scriptsAsync.length ) {
 				// Load asynchronous scripts
-				head.js.apply( null, scriptsAsync );
+				Reveal.head.js.apply( null, scriptsAsync );
 			}
 
 			start();
 		}
 
 		function loadScript( s ) {
-			head.ready( s.src/*.match( /([\w\d_\-]*)\.?js$|[^\\\/]*$/i )[0]*/, function() {
+			Reveal.head.ready( s.src/*.match( /([\w\d_\-]*)\.?js$|[^\\\/]*$/i )[0]*/, function() {
 				// Extension may contain callback functions
 				if( typeof s.callback === 'function' ) {
 					s.callback.apply( this );
@@ -457,7 +457,7 @@ const plugin = function () {
 			scriptsToPreload = scripts.length;
 
 			// Load synchronous scripts
-			head.js.apply( null, scripts );
+			Reveal.head.js.apply( null, scripts );
 		}
 		else {
 			proceed();
