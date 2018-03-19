@@ -6,7 +6,7 @@
  * Copyright (C) 2017 Hakim El Hattab, http://hakim.se
  */
 import head from 'headjs';
-export default ex(root, plugin)
+export default ex(this, plugin)
 function ex ( root, factory ) {
 	if (root === undefined) root = window;
 	if( typeof define === 'function' && define.amd ) {
