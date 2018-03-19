@@ -32,7 +32,6 @@ const plugin = function () {
 	'use strict';
 
 	var Reveal;
-	var head = {};
 
 	// The reveal.js version
 	var VERSION = '3.6.0';
@@ -305,7 +304,7 @@ const plugin = function () {
 	 * Starts up the presentation if the client is capable.
 	 */
 	function initialize( domObject, options ) {
-		extend(Reveal.head, domObject);
+		extend(Reveal, domObject);
 		// Make sure we only initialize once
 		if( initialized === true ) return;
 
