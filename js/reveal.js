@@ -32,6 +32,7 @@ const plugin = function () {
 	'use strict';
 
 	var Reveal;
+	var Reveal.head = {};
 
 	// The reveal.js version
 	var VERSION = '3.6.0';
@@ -41,7 +42,6 @@ const plugin = function () {
 		VERTICAL_SLIDES_SELECTOR = '.slides>section.present>section',
 		HOME_SLIDE_SELECTOR = '.slides>section:first-of-type',
 		UA = navigator.userAgent,
-		head,
 		// Configuration defaults, can be overridden at initialization time
 		config = {
 
